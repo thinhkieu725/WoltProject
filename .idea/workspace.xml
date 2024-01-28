@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d258c66-a61f-43bf-943d-de1bce4f11e9" name="Changes" comment="Add calculate_delivery_fee() and complete main())">
-      <change afterPath="$PROJECT_DIR$/request1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4d258c66-a61f-43bf-943d-de1bce4f11e9" name="Changes" comment="Add tests and debug calculate delifee by distance">
       <change beforePath="$PROJECT_DIR$/Delivery_fee_calculator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Delivery_fee_calculator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/request.json" beforeDir="false" afterPath="$PROJECT_DIR$/request0.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/response.json" beforeDir="false" afterPath="$PROJECT_DIR$/response0.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +32,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/PythonFiles/WoltProject/venv",
+    "last_opened_file_path": "D:/PythonFiles/WoltProject",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -47,8 +43,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\PythonFiles\WoltProject\venv" />
       <recent name="D:\PythonFiles\WoltProject" />
+      <recent name="D:\PythonFiles\WoltProject\venv" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\PythonFiles\WoltProject\" />
@@ -62,7 +58,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1693311679030</updated>
-      <workItem from="1706448523863" duration="6277000" />
+      <workItem from="1706448523863" duration="6544000" />
     </task>
     <task id="LOCAL-00001" summary="Add calculate_delivery_fee() and complete main())">
       <option name="closed" value="true" />
@@ -72,7 +68,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706453516520</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add tests and debug calculate delifee by distance">
+      <option name="closed" value="true" />
+      <created>1706455029856</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1706455029856</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -80,9 +84,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add calculate_delivery_fee() and complete main())" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add calculate_delivery_fee() and complete main())" />
+    <MESSAGE value="Add tests and debug calculate delifee by distance" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add tests and debug calculate delifee by distance" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/WoltProject$Delivery_fee_calculator.coverage" NAME="Delivery_fee_calculator Coverage Results" MODIFIED="1706454839698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/WoltProject$Delivery_fee_calculator.coverage" NAME="Delivery_fee_calculator Coverage Results" MODIFIED="1706454946373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
