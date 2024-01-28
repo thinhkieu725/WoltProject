@@ -3,7 +3,7 @@ This is the Backend specifics part of the Wolt's trainee assignment.
 This project aims to calculate the delivery fee.
 
 The following file(s) must be in the same working directory:
-request.json
+request0.json
 
 Creator: Thinh Kieu
 Email: thinhkieu726@gmail.com
@@ -11,6 +11,8 @@ Email: thinhkieu726@gmail.com
 
 import json
 from datetime import datetime
+import math
+
 # Constants for delivery fee calculation
 FREE_DELI_CART_VALUE = 20000
 
@@ -24,7 +26,7 @@ DELI_FEE_PER_INTERVAL = 100
 MAX_FREECHARGE_NUM_ITEMS = 4
 FEE_PER_EXCESS_ITEM = 50
 MAX_NO_BULKFEE_NUM_ITEMS = 12
-BULK_FEE = 1200
+BULK_FEE = 120
 
 FRI_RUSH_RATE = 1.2
 FRIDAY_IDX = 5  # System constant
@@ -34,8 +36,8 @@ RUSH_HOUR_END = 19
 MAX_DELI_FEE = 1500
 
 # Constant for testing and operating
-REQUEST_FILE = "request.json"
-RESPONSE_FILE = "response.json"
+REQUEST_FILE = "request1.json"
+RESPONSE_FILE = "response1.json"
 
 
 def read_payload(file_name):
@@ -94,11 +96,11 @@ def calculate_delivery_fee(cart_value, delivery_distance, number_of_items,
 
     # Calculate the delivery fee based on distance
     delivery_fee = 0
-    if delivery_distance < DELI_BASE_DISTANCE:
+    if delivery_distance <= DELI_BASE_DISTANCE:
         delivery_fee = DELI_BASE_FEE
     else:
         extended_distance = delivery_distance - DELI_BASE_DISTANCE
-        extended_fee = ((extended_distance // DELI_DISTANCE_INTERVAL + 1)
+        extended_fee = (math.ceil(extended_distance / DELI_DISTANCE_INTERVAL)
                         * DELI_FEE_PER_INTERVAL)
         delivery_fee = DELI_BASE_FEE + extended_fee
 
@@ -117,11 +119,14 @@ def calculate_delivery_fee(cart_value, delivery_distance, number_of_items,
         hour = time_stamp.hour
         if RUSH_HOUR_START <= hour < RUSH_HOUR_END:
             delivery_fee *= FRI_RUSH_RATE
+            delivery_fee = int(delivery_fee)
 
     # Limit the maximum delivery fee
     if delivery_fee > MAX_DELI_FEE:
         delivery_fee = MAX_DELI_FEE
 
+    print(surcharges)
+    print(delivery_fee)
     return delivery_fee
 
 
