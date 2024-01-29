@@ -34,7 +34,7 @@ To run the project, make the working directory to be the directory with the file
 
 Run the following command 
 ```
-uvicorn Delivery_fee_calculator:app --reload
+uvicorn main:app --reload
 ```
 The window then should respond with some info lines such as:
 ```
