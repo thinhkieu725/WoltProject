@@ -11,32 +11,8 @@ Email: thinhkieu726@gmail.com
 from datetime import datetime
 import math
 from fastapi import FastAPI, Body
-
-# Constants for delivery fee calculation
-FREE_DELI_CART_VALUE = 20000
-
-MIN_FREECHARGE_CART_VALUE = 1000
-
-DELI_BASE_DISTANCE = 1000
-DELI_BASE_FEE = 200
-DELI_DISTANCE_INTERVAL = 500
-DELI_FEE_PER_INTERVAL = 100
-
-MAX_FREECHARGE_NUM_ITEMS = 4
-FEE_PER_EXCESS_ITEM = 50
-MAX_NO_BULKFEE_NUM_ITEMS = 12
-BULK_FEE = 120
-
-FRI_RUSH_RATE = 1.2
-FRIDAY_IDX = 5  # System constant
-RUSH_HOUR_START = 15
-RUSH_HOUR_END = 19
-
-MAX_DELI_FEE = 1500
-
-# Constant for testing and operating
-REQUEST_FILE = "request1.json"
-RESPONSE_FILE = "response1.json"
+import util
+import const
 
 # API creating and processing
 app = FastAPI()
