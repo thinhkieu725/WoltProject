@@ -1,7 +1,7 @@
 import const
 
 
-def calculate(cart_value: int, number_of_items: int, ):
+def calculate(cart_value: int, number_of_items: int):
     """
     This function calculate the surcharges, including small order surcharge,
     large number of item surcharge and the bulk fee for an order of over 12
