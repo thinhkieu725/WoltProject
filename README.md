@@ -15,18 +15,17 @@ In order to build the project and perform the task, the computer must be install
 - Python 3.9.0
 - FastAPI 0.109.0
 - Uvicorn 0.27.0
+- Pydantic 2.5.3
 - Postman
+- ...
 
 This project uses FastAPI to create an API and Uvicorn to provide an ASGI server to run the FastAPI application.
-These packages can be installed through 'pip package installer' using the following commands in the PowerShell:
+All the required packages can be installed by running
 
 ```
-pip install fastapi
+pip install -r requirements.txt
 ```
-and
-```
-pip install uvicorn
-```
+
 
 To perform the task, Postman application is used to make POST requests. The instruction on installation can be found at https://web.postman.co/.
 
