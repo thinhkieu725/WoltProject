@@ -8,9 +8,9 @@ Creator: Thinh Kieu
 Email: thinhkieu726@gmail.com
 """
 
-import json
 from datetime import datetime
 import math
+from fastapi import FastAPI, Body
 
 # Constants for delivery fee calculation
 FREE_DELI_CART_VALUE = 20000
@@ -38,27 +38,24 @@ MAX_DELI_FEE = 1500
 REQUEST_FILE = "request1.json"
 RESPONSE_FILE = "response1.json"
 
-
-def read_payload(file_name):
-    """
-    Get the .json file name and return the content as a dictionary.
-    :param file_name: str : name of the file to be read
-    :return: dict : the content of the file
-    """
-    with open(file_name, "r") as read_name:
-        content = json.load(read_name)
-        return content
+# API creating and processing
+app = FastAPI()
 
 
-def write_payload(dict_to_write, file_name):
-    """
-    Serialize the dictionary's content into a .json file.
-    :param dict_to_write: dict : the dictionary to be serialized
-    :param file_name: str : name of the file to be written
-    :return: None
-    """
-    with open(file_name, "w") as write_file:
-        json.dump(dict_to_write, write_file)
+@app.post("/delivery_fee_calculator")
+async def delivery_fee_response(
+    cart_value: int = Body(...),
+    delivery_distance: int = Body(...),
+    number_of_items: int = Body(...),
+    time: str = Body(...),
+):
+    # Calculate the delivery fee
+    delivery_fee = calculate_delivery_fee(cart_value, delivery_distance,
+                                          number_of_items, time)
+    # Create response payload
+    response_data = {"delivery_fee": delivery_fee}
+
+    return response_data
 
 
 def iso_to_datetime(iso_string):
@@ -73,18 +70,21 @@ def iso_to_datetime(iso_string):
 
 
 def calculate_delivery_fee(cart_value, delivery_distance, number_of_items,
-                           time_stamp):
+                           time):
     """
     Calculate the delivery fee for the order with given parameters.
     :param cart_value: int : total value of the cart (in cents)
     :param delivery_distance: int : delivery distance (in meters)
     :param number_of_items: int : number of item
-    :param time: datetime : time stamp of the order
+    :param time: string : time stamp of the order in ISO format
     :return: int : delivery fee (in cents)
     """
     # Free delivery for 200e or over cart
     if cart_value >= FREE_DELI_CART_VALUE:
         return 0
+
+    # Convert the time to datetime object
+    time_stamp = iso_to_datetime(time)
 
     # Establish a dict to store surcharges
     surcharges = {"small_order": 0, "large_num_items": 0, "bulk": 0}
@@ -124,25 +124,4 @@ def calculate_delivery_fee(cart_value, delivery_distance, number_of_items,
     if delivery_fee > MAX_DELI_FEE:
         delivery_fee = MAX_DELI_FEE
 
-    print(surcharges)
-    print(delivery_fee)
     return delivery_fee
-
-
-def main():
-    # Read the request payload
-    request = read_payload(REQUEST_FILE)
-    # Convert the iso-formatted time to datetime object
-    time_stamp = iso_to_datetime(request["time"])
-    # Calculate the delivery fee
-    delivery_fee = calculate_delivery_fee(request["cart_value"],
-                                          request["delivery_distance"],
-                                          request["number_of_items"],
-                                          time_stamp)
-    # Write the response payload
-    response = {"delivery_fee": delivery_fee}
-    write_payload(response, RESPONSE_FILE)
-
-
-if __name__ == "__main__":
-    main()
