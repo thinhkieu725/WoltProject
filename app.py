@@ -58,7 +58,7 @@ async def delivery_fee_response(
     return response_data
 
 
-def iso_to_datetime(iso_string):
+def iso_to_datetime(iso_string: str):
     """
     Convert from an iso-formatted string to a datetime object.
     :param iso_string: str : date_time string
@@ -69,8 +69,8 @@ def iso_to_datetime(iso_string):
     return converted_time
 
 
-def calculate_delivery_fee(cart_value, delivery_distance, number_of_items,
-                           time):
+def calculate_delivery_fee(cart_value: int, delivery_distance: int,
+                           number_of_items: int, time: int):
     """
     Calculate the delivery fee for the order with given parameters.
     :param cart_value: int : total value of the cart (in cents)
