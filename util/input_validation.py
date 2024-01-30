@@ -1,4 +1,5 @@
 from datetime import datetime
+from dateutil import parser
 
 
 def check(
@@ -63,8 +64,11 @@ def check(
 
 def is_iso_format(input_string):
     try:
-        # Try to parse the string as ISO format
-        datetime.strptime(input_string, "%Y-%m-%dT%H:%M:%SZ")
-        return True
+        # Try to parse the string using dateutil.parser without milliseconds
+        parsed_date = parser.isoparse(input_string)
+        # Check if the parsed date has microseconds equal to 0, ends with 'Z',
+        # and the hour is less than 24
+        return (parsed_date.microsecond == 0 and input_string.endswith('Z') and
+                parsed_date.hour < 24)
     except ValueError:
         return False

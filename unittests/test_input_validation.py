@@ -70,7 +70,11 @@ class TestInputValidation(unittest.TestCase):
         self.assertEqual(result, (422, "The time must be in ISO 8601 format."))
 
     def test_wrong_format_5(self):
-        result = check(790, 2235, 4, "2024-01-33T13::00:00Z")
+        result = check(790, 2235, 4, "2024-01-33T13:00:00Z")
+        self.assertEqual(result, (422, "The time must be in ISO 8601 format."))
+
+    def test_wrong_format_6(self):
+        result = check(790, 2235, 4, "2024-01-33T13:0:00Z")
         self.assertEqual(result, (422, "The time must be in ISO 8601 format."))
 
 
