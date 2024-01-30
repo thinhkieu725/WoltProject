@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d258c66-a61f-43bf-943d-de1bce4f11e9" name="Changes" comment="Divide the program into modules">
-      <change afterPath="$PROJECT_DIR$/util/input_validation.py" afterDir="false" />
+    <list default="true" id="4d258c66-a61f-43bf-943d-de1bce4f11e9" name="Changes" comment="rename directory">
+      <change afterPath="$PROJECT_DIR$/unittests/test_distance_fee.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +76,7 @@
       <updated>1693311679030</updated>
       <workItem from="1706448523863" duration="22603000" />
       <workItem from="1706550341819" duration="3195000" />
-      <workItem from="1706556364174" duration="10167000" />
+      <workItem from="1706556364174" duration="11386000" />
     </task>
     <task id="LOCAL-00001" summary="Add calculate_delivery_fee() and complete main())">
       <option name="closed" value="true" />
@@ -183,7 +182,23 @@
       <option name="project" value="LOCAL" />
       <updated>1706570971344</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add input_validation.py">
+      <option name="closed" value="true" />
+      <created>1706573600908</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1706573600908</updated>
+    </task>
+    <task id="LOCAL-00015" summary="rename directory">
+      <option name="closed" value="true" />
+      <created>1706573872406</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1706573872406</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,7 +216,9 @@
     <MESSAGE value="Add const.py" />
     <MESSAGE value="Reformat const.py" />
     <MESSAGE value="Divide the program into modules" />
-    <option name="LAST_COMMIT_MESSAGE" value="Divide the program into modules" />
+    <MESSAGE value="Add input_validation.py" />
+    <MESSAGE value="rename directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename directory" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/WoltProject$app.coverage" NAME="app Coverage Results" MODIFIED="1706556378465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
