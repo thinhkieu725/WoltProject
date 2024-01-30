@@ -5,8 +5,8 @@ import const
 def check(time: str):
     """
     Check whether the given time is in the Friday rush hours.
-    :param time:
-    :return:
+    :param time: str: The time in ISO 8601 format
+    :return: bool: True if the time is within Friday rush hours
     """
     # Convert the time to datetime object
     time_stamp = iso_to_datetime.convert(time)

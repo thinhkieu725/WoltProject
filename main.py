@@ -2,8 +2,6 @@
 This is the Backend specifics part of the Wolt's trainee assignment.
 This project aims to calculate the delivery fee.
 
-The request*.json file(s) must be in the same working directory with this file.
-
 Creator: Thinh Kieu
 Email: thinhkieu726@gmail.com
 """

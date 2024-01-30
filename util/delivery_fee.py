@@ -1,5 +1,3 @@
-import math
-
 import const
 from util import surcharges, friday_rush, distance_fee
 

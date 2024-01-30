@@ -2,7 +2,7 @@ import unittest
 from util.friday_rush import check
 
 
-class TestDistanceFee(unittest.TestCase):
+class TestFridayRush(unittest.TestCase):
 
     def test_1(self):
         result = check("2024-02-02T16:54:22Z")

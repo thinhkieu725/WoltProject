@@ -3,7 +3,7 @@ from datetime import datetime
 from util.iso_to_datetime import convert
 
 
-class TestDistanceFee(unittest.TestCase):
+class TestIsoToDatetime(unittest.TestCase):
 
     def test_1(self):
         result = convert("2024-01-31T23:59:59Z")
